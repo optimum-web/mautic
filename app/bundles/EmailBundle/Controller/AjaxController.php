@@ -247,6 +247,7 @@ class AjaxController extends CommonAjaxController
                         }
                         $mailer->setUsername($settings['user']);
                         $mailer->setPassword($settings['password']);
+                        $mailer->setStreamOptions(array('ssl' => array('allow_self_signed' => true, 'verify_peer' => false)));
                     }
                 } catch (\Exception $exception) {
                     // Transport had magic method defined and threw an exception
